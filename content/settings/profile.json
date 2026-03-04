@@ -16,23 +16,18 @@
       "highlight": false
     },
     {
-      "key": "Certyfikaty",
-      "val": "FINAT, GS1",
-      "highlight": false
-    },
-    {
       "key": "Kraje odwiedzone",
-      "val": "23",
+      "val": "16",
       "highlight": true
     },
     {
       "key": "Ostatni wyjazd",
-      "val": "USA, kwiecień 2025",
+      "val": "NL / BE / DE ... luty 2026",
       "highlight": false
     },
     {
       "key": "Następny cel",
-      "val": "Portugalia, 2025",
+      "val": "USA - Florida ... kwiecień/maj 2026",
       "highlight": false
     }
   ],
@@ -55,7 +50,7 @@
       "color": "sage"
     },
     {
-      "text": "USA 2024",
+      "text": "USA 2025",
       "color": "rust"
     }
   ],
@@ -63,12 +58,8 @@
   "linkedin": "https://linkedin.com",
   "stats": [
     {
-      "num": "15+",
-      "label": "lat w branży"
-    },
-    {
-      "num": "200+",
-      "label": "wdrożeń linerless"
+      "num": "11",
+      "label": "lat w branży Linerless"
     },
     {
       "num": "16",
