@@ -1,31 +1,69 @@
 {
-  "name": "Marek Wiśniewski",
+  "bio_short": "Zawodowo: etykiety linerless, procesy produkcyjne, kontrola jakości, testy FINAT, szkolenia, instrukcje ...\n\nPrywatnie: świat za oknem (auta, samolotu) ... bo praca to nie wszystko, co warto dokumentować.",
+  "city": "Roosendaal, NL",
+  "name": "Tomasz W.",
   "initials": "W.",
-  "job_title": "Specjalista produkcji etykiet linerless",
-  "city": "Warszawa, Polska",
-  "email": "marek@wisniewski.pl",
-  "linkedin": "https://linkedin.com/in/marek-wisniewski",
-  "bio_short": "Etykiety linerless, procesy produkcyjne i świat za oknem — bo praca to nie wszystko, co warto dokumentować.",
-  "bio_long": "Pracuję w branży etykiet od ponad piętnastu lat — zaczynałem od linii produkcyjnych, skończyłem jako specjalista od technologii linerless, która dziś coraz mocniej zmienia rynek.\n\nEtykiety linerless to moja dziedzina. Rozumiem je od strony chemii klejów, mechaniki aplikatorów, wymagań retail i logistyki zwrotnej.\n\nPrywatnie — mąż, tata, podróżnik. Z rodziną staramy się każdego roku zobaczyć coś nowego.",
-  "stats": [
-    { "num": "15+", "label": "lat w branży" },
-    { "num": "200+", "label": "wdrożeń linerless" },
-    { "num": "23", "label": "krajów z rodziną" },
-    { "num": "4", "label": "tygodnie w USA" }
-  ],
-  "tags": [
-    { "text": "Linerless", "color": "amber" },
-    { "text": "Technologia etykiet", "color": "amber" },
-    { "text": "Podróże rodzinne", "color": "sage" },
-    { "text": "Europa", "color": "sage" },
-    { "text": "USA 2024", "color": "rust" }
-  ],
+  "bio_long": "Pracuję w branży etykiet od ponad piętnastu lat - zaczynałem od linii produkcyjnych, skończyłem jako specjalista od technologii linerless, która dziś coraz mocniej zmienia rynek.\n\nEtykiety linerless to moja dziedzina.\n\nPrywatnie - partner, tata, podróżnik. Z rodziną staramy się każdego roku zobaczyć coś nowego.",
   "spec_card": [
-    { "key": "Doświadczenie", "val": "15+ lat", "highlight": true },
-    { "key": "Specjalizacja", "val": "Linerless labels", "highlight": false },
-    { "key": "Certyfikaty", "val": "FINAT, GS1", "highlight": false },
-    { "key": "Kraje odwiedzone", "val": "23", "highlight": true },
-    { "key": "Ostatni wyjazd", "val": "USA, kwiecień 2025", "highlight": false },
-    { "key": "Następny cel", "val": "Portugalia, 2025", "highlight": false }
+    {
+      "key": "Doświadczenie",
+      "val": "15+ lat",
+      "highlight": true
+    },
+    {
+      "key": "Specjalizacja",
+      "val": "Linerless labels",
+      "highlight": false
+    },
+    {
+      "key": "Kraje odwiedzone",
+      "val": "16",
+      "highlight": true
+    },
+    {
+      "key": "Ostatni wyjazd",
+      "val": "NL / DE /BE luty 2026",
+      "highlight": false
+    },
+    {
+      "key": "Następny cel",
+      "val": "USA / Floryda, 4/5.2026",
+      "highlight": true
+    }
+  ],
+  "job_title": "Specjalista produkcji etykiet linerless",
+  "tags": [
+    {
+      "text": "Linerless",
+      "color": "amber"
+    },
+    {
+      "text": "Technologia etykiet",
+      "color": "amber"
+    },
+    {
+      "text": "Podróże rodzinne",
+      "color": "sage"
+    },
+    {
+      "text": "Europa",
+      "color": "sage"
+    },
+    {
+      "text": "USA 2024",
+      "color": "rust"
+    }
+  ],
+  "email": "linerless.expert@gmail.com",
+  "linkedin": "xxx",
+  "stats": [
+    {
+      "num": "15+",
+      "label": "lat w branży"
+    },
+    {
+      "num": "16",
+      "label": "krajów z rodziną"
+    }
   ]
 }
