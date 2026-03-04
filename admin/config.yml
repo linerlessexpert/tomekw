@@ -1,0 +1,123 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: pl
+
+collections:
+  # ── DANE OSOBOWE ──
+  - name: "settings"
+    label: "⚙️ Moje dane i ustawienia"
+    files:
+      - name: "profile"
+        label: "Profil i bio"
+        file: "content/settings/profile.json"
+        fields:
+          - { label: "Imię i nazwisko", name: "name", widget: "string" }
+          - { label: "Inicjały (nav logo)", name: "initials", widget: "string", hint: "np. W." }
+          - { label: "Tytuł zawodowy", name: "job_title", widget: "string" }
+          - { label: "Miasto", name: "city", widget: "string" }
+          - { label: "E-mail", name: "email", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+          - { label: "Bio (krótkie — hero)", name: "bio_short", widget: "text" }
+          - { label: "Bio (długie — sekcja O mnie)", name: "bio_long", widget: "markdown" }
+          - label: "Statystyki (4 liczby)"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Liczba", name: "num", widget: "string" }
+              - { label: "Opis", name: "label", widget: "string" }
+          - label: "Tagi (hero)"
+            name: "tags"
+            widget: "list"
+            fields:
+              - { label: "Tekst tagu", name: "text", widget: "string" }
+              - label: "Kolor"
+                name: "color"
+                widget: "select"
+                options: ["amber", "sage", "rust"]
+          - label: "Karta specyfikacji (hero)"
+            name: "spec_card"
+            widget: "list"
+            fields:
+              - { label: "Etykieta", name: "key", widget: "string" }
+              - { label: "Wartość", name: "val", widget: "string" }
+              - { label: "Wyróżnij (kolor rdzawy)", name: "highlight", widget: "boolean", default: false }
+
+  # ── AKTUALNOŚCI LINERLESS ──
+  - name: "news"
+    label: "📰 Aktualności Linerless"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Tytuł", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime", format: "DD.MM.YYYY", date_format: "DD.MM.YYYY", time_format: false }
+      - label: "Kategoria"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Regulacje EU", value: "Regulacje EU" }
+          - { label: "Targi i konferencje", value: "Targi" }
+          - { label: "Zrównoważony rozwój", value: "Zrównoważony rozwój" }
+          - { label: "Technologia", value: "Technologia" }
+          - { label: "Retail & FMCG", value: "Retail" }
+          - { label: "Inne", value: "Inne" }
+      - { label: "Wyróżniony (duża karta)", name: "featured", widget: "boolean", default: false }
+      - { label: "Krótki opis (lista)", name: "excerpt", widget: "text" }
+      - { label: "Pełna treść artykułu", name: "body", widget: "markdown" }
+      - { label: "Miniatura (opcjonalna)", name: "image", widget: "image", required: false }
+
+  # ── BLOG ──
+  - name: "blog"
+    label: "✍️ Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title", "category"]
+    fields:
+      - { label: "Tytuł", name: "title", widget: "string" }
+      - { label: "Data publikacji", name: "date", widget: "datetime", format: "DD.MM.YYYY", date_format: "DD.MM.YYYY", time_format: false }
+      - label: "Kategoria"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Podróże", value: "travel" }
+          - { label: "Linerless", value: "linerless" }
+          - { label: "Technika", value: "tech" }
+      - { label: "Podkategoria (np. USA, EU, Włochy)", name: "subcategory", widget: "string", required: false }
+      - { label: "Czas czytania (min)", name: "read_time", widget: "number", default: 5 }
+      - { label: "Krótki opis (lista wpisów)", name: "excerpt", widget: "text" }
+      - { label: "Treść wpisu", name: "body", widget: "markdown" }
+      - { label: "Zdjęcie główne", name: "image", widget: "image", required: false }
+      - { label: "Opublikowany", name: "published", widget: "boolean", default: true }
+
+  # ── PODRÓŻE ──
+  - name: "travel"
+    label: "✈️ Podróże"
+    folder: "content/travel"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{destination}} — {{year}}"
+    fields:
+      - { label: "Kraj / Destynacja", name: "destination", widget: "string" }
+      - { label: "Emoji flagi", name: "flag", widget: "string", hint: "np. 🇺🇸" }
+      - { label: "Rok", name: "year", widget: "string" }
+      - { label: "Miesiąc i czas trwania", name: "meta", widget: "string", hint: "np. Wrzesień 2024 · 4 tygodnie · LA → Chicago → NYC" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "✅ Opisana", value: "opisana" }
+          - { label: "🟢 Relacja w toku", value: "w_toku" }
+          - { label: "🟡 Planowana", value: "planowany" }
+      - { label: "Krótki opis (karta)", name: "excerpt", widget: "text" }
+      - { label: "Pełny opis (modal)", name: "body", widget: "markdown" }
+      - { label: "Zdjęcia z podróży", name: "images", widget: "list", field: { label: "Zdjęcie", name: "image", widget: "image" }, required: false }
+      - { label: "Kolejność wyświetlania", name: "order", widget: "number", default: 99 }
