@@ -1,6 +1,6 @@
 [build]
   publish = "."
-  command = "echo 'Static site — no build step needed'"
+  command = "node generate-indexes.js"
 
 [[redirects]]
   from = "/admin"

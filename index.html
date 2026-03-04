@@ -626,14 +626,15 @@ async function loadProfile() {
 
 // ── LOAD NEWS ──
 async function loadNews() {
-  const files = [
-    '2026-03-01-pfas-zakaz-sierpien-2026.md',
-    '2026-02-01-ppwr-dpp-aktualizacja.md',
-    '2026-01-15-rynek-linerless-2026.md',
-    '2025-01-01-digital-product-passport.md',
-    '2024-11-01-finat-recykling.md'
-  ];
-
+  let files = [];
+  try {
+    const idx = await fetch('/content/news/index.json');
+    files = await idx.json();
+  } catch(e) { files = []; }
+  if (!files.length) {
+    document.getElementById('news-bento').innerHTML = '<p style="color:var(--charcoal);padding:1rem">Brak aktualności.</p>';
+    return;
+  }
   const results = await Promise.allSettled(
     files.map(f => fetch(`/content/news/${f}`).then(r => r.text()))
   );
@@ -668,8 +669,12 @@ async function loadNews() {
 
 // ── LOAD TRAVEL ──
 async function loadTravel() {
-  const files = ['usa-2025.md', 'wlochy-2023.md', 'portugalia-2025.md'];
-
+  let files = [];
+  try {
+    const idx = await fetch('/content/travel/index.json');
+    files = await idx.json();
+  } catch(e) { files = []; }
+  if (!files.length) { document.getElementById('travel-grid').innerHTML = ''; return; }
   const results = await Promise.allSettled(
     files.map(f => fetch(`/content/travel/${f}`).then(r => r.text()))
   );
@@ -719,15 +724,12 @@ async function loadTravel() {
 
 // ── LOAD BLOG ──
 async function loadBlog() {
-  const files = [
-    '2025-05-20-horseshoe-bend-page.md',
-    '2025-05-15-grand-canyon-z-dziecmi.md',
-    '2024-11-03-dpp-2027.md',
-    '2024-09-18-route-66.md',
-    '2023-06-20-toskania.md',
-    '2024-08-05-fsc-etykiety.md'
-  ];
-
+  let files = [];
+  try {
+    const idx = await fetch('/content/blog/index.json');
+    files = await idx.json();
+  } catch(e) { files = []; }
+  if (!files.length) { document.getElementById('blog-grid').innerHTML = '<p>Brak wpisów.</p>'; return; }
   const results = await Promise.allSettled(
     files.map(f => fetch(`/content/blog/${f}`).then(r => r.text()))
   );
